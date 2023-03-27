@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     private AppCompatSpinner genderSpinner;
     private MaterialButton submitButton;
     private int selectedGenderPosition = 0;
+    private String selectedGender;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +48,12 @@ public class MainActivity extends AppCompatActivity {
         genderList.add("Others");
 
         // Creating adapter for spinner
-        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, genderList);
+        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, genderList){
+            @Override
+            public boolean isEnabled(int position) {
+                return position > 0;
+            }
+        };
         // Drop down layout style - list view with radio button
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
@@ -55,6 +61,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 selectedGenderPosition = position;
+
+                selectedGender = (String) parent.getSelectedItem();
             }
 
             @Override
@@ -69,10 +77,13 @@ public class MainActivity extends AppCompatActivity {
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(selectedGenderPosition > 0){
+             /*   if(selectedGenderPosition > 0){
                     Toast.makeText(MainActivity.this, "Selected gender is " + genderList.get(selectedGenderPosition), Toast.LENGTH_LONG).show();
                 }else
                     Toast.makeText(MainActivity.this, "Please choose appropriate gender", Toast.LENGTH_LONG).show();
+            */
+                   Toast.makeText(MainActivity.this, selectedGender, Toast.LENGTH_LONG).show();
+
             }
         });
     }
