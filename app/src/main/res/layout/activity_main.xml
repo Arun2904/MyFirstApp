@@ -36,6 +36,16 @@
         app:layout_constraintTop_toBottomOf="@id/sp_gender"
         android:layout_marginTop="30dp"/>
 
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_submit_implicit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Submit Implicit"
+        app:layout_constraintStart_toStartOf="@id/btn_submit"
+        app:layout_constraintEnd_toEndOf="@id/btn_submit"
+        app:layout_constraintTop_toBottomOf="@id/btn_submit"
+        android:layout_marginTop="30dp"/>
+
     <TextView
         android:id="@+id/tv_rotation_count"
         android:layout_width="wrap_content"

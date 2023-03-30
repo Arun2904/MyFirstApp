@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">MyFirstApp</string>
     <string name="select_gender">Select Gender</string>
+    <string name="custom_spinner">Custom Spinner</string>
 </resources>
