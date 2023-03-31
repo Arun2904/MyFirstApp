@@ -1,19 +1,19 @@
 package com.example.myfirstapp;
 
-import androidx.annotation.IntegerRes;
+import androidx.annotation.DrawableRes;
 
 public class CountryModel {
 
-    private @IntegerRes int countryImage;
+    private @DrawableRes int countryFlagImage;
     private String countryName;
 
-    public CountryModel(@IntegerRes int countryImage, String countryName){
-        this.countryImage = countryImage;
+    public CountryModel(@DrawableRes int countryFlagImage, String countryName){
+        this.countryFlagImage = countryFlagImage;
         this.countryName = countryName;
     }
 
     public int getCountryImage() {
-        return countryImage;
+        return countryFlagImage;
     }
 
     public String getCountryName() {

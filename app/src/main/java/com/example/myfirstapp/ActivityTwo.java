@@ -11,6 +11,7 @@ import android.os.Bundle;
 import com.example.myfirstapp.adapter.CountrySpinnerAdapter;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ActivityTwo extends AppCompatActivity {
 
@@ -37,12 +38,19 @@ public class ActivityTwo extends AppCompatActivity {
             tvSelectedGender.setText(gender);
         }
 
-        createCountryList();
-        CountrySpinnerAdapter countrySpinnerAdapter = new CountrySpinnerAdapter();
-        countrySpinner.setAdapter();
+        List<CountryModel> list = createCountryList();
+        CountrySpinnerAdapter countrySpinnerAdapter = new CountrySpinnerAdapter(list);
+        countrySpinner.setAdapter(countrySpinnerAdapter);
     }
 
-    private void createCountryList() {
-        ArrayList<> list = new ArrayList();
+    private ArrayList<CountryModel> createCountryList() {
+        ArrayList<CountryModel> list = new ArrayList();
+        list.add(new CountryModel(R.drawable.india, "India"));
+        list.add(new CountryModel(R.drawable.pakistan, "Pakistan"));
+        list.add(new CountryModel(R.drawable.nepal, "Nepal"));
+        list.add(new CountryModel(R.drawable.myanmar, "Myanmar (Burma)"));
+        list.add(new CountryModel(R.drawable.bhutan, "Bhutan"));
+        list.add(new CountryModel(R.drawable.srilanka, "Srilanka"));
+        return list;
     }
 }

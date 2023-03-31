@@ -30,11 +30,10 @@
     <androidx.appcompat.widget.AppCompatSpinner
         android:id="@+id/sp_custom"
         android:layout_width="0dp"
-        android:layout_height="40dp"
+        android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_custom_spinner"
-        android:layout_marginTop="10dp"/>
+        app:layout_constraintTop_toBottomOf="@id/tv_custom_spinner"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
